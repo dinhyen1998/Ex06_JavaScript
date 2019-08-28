@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('td .btn_duyet').click(function () {
+                var $this = $(this);
+                var c = confirm('duyet??');
+                if (c) {
+                    $this.parents('tr').find('.duyet_img').show();
+                    $this.parents('tr').find('.chan_img').hide();
+                }
+            })
+
+            $('td .btn_chan').click(function () {
+                var $this = $(this);
+                var c = confirm('chan??');
+                if (c) {
+                    $this.parents('tr').find('.chan_img').show();
+                    $this.parents('tr').find('.duyet_img').hide();
+                }
+            })
+            $('td .btn_xoa').click(function () {
+                var $this = $(this);
+                var c = confirm('do you want delete??');
+                if (c) {
+                    $this.parents('tr').fadeOut(function () {
+                        $this.remove();
+                    })
+                }
+            })
+            $('.btn_xoa_2').click(function () {
+                var c = confirm('Delete ! Are you sure?');
+                if (c) {
+                    $('table tbody').find('input[type=checkbox]').each(function () {
+                        if ($(this).is(':checked')) {
+                            if (c) {
+                                $(this).parents('tr').fadeOut(function () {
+                                    $(this).remove();
+                                })
+                            }
+
+                        }
+                    })
+                }
+            })
+            $('.btn_duyet_2').click(function () {
+                var c = confirm('duyet ! Are you sure?');
+                if (c) {
+                    $('table tbody').find('input[type=checkbox]').each(function () {
+                        if ($(this).is(':checked')) {
+                            if (c) {
+                                $(this).parents('tr').find('.duyet_img').show();
+                                $(this).parents('tr').find('.chan_img').hide();
+                            }
+
+                        }
+                    })
+                }
+            })
+            $('.btn_chan_2').click(function () {
+                var c = confirm('chan ! Are you sure?');
+                if (c) {
+                    $('table tbody').find('input[type=checkbox]').each(function () {
+                        if ($(this).is(':checked')) {
+                            if (c) {
+                                $(this).parents('tr').find('.chan_img').show();
+                                $(this).parents('tr').find('.duyet_img').hide();
+                            }
+
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="popup_xem">
+        Tieu de bai viet : <input style="width: max-content" type="text" class="tieude" />
+        <button class="popup_close">Close</button>
+    </div>
+    <center>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Chọn</th>
+                    <th>Tiêu đề bài viết</th>
+                    <th>Danh mục</th>
+                    <th>Lịch đăng</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>2/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>5/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>2/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>5/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>2/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>5/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>2/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>5/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Trump fires back at retired general</td>
+                    <td>Donan Trump</td>
+                    <td>2/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="record" /></td>
+                    <td class="title">Xin chao tat ca cac ban. minh la billgate</td>
+                    <td>Donan Trump</td>
+                    <td>5/1/2019</td>
+                    <td class="trangthai"><img class="duyet_img" src="duyet.jpg" /> <img class="chan_img" src="chan.png" /></td>
+                    <td><button style="background-color: chartreuse" class="btn_duyet">Duyet</button>
+                        <button style="background-color: crimson" class="btn_chan">chan</button>
+                        <button style="background-color: chartreuse" id="btn_xem">Xem</button>
+                        <button style="background-color: chartreuse" id="btn_sua">Sua</button>
+                        <button style="background-color: crimson" class="btn_xoa">Xoa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button style="background-color: chartreuse" class="btn_duyet_2">Duyet</button>
+        <button style="background-color: crimson" class="btn_chan_2">chan</button>
+        <button style="background-color: crimson" class="btn_xoa_2">Xoa</button>
+
+    </center>
+</body>
+<script>
+    $(document).ready(function () {
+        $('td #btn_xem').click(function () {
+            $('.popup_xem').toggle('show');
+            $('table').fadeToggle();
+            $('.btn_duyet_2').hide();
+            $('.btn_xoa_2').hide();
+            $('.btn_chan_2').hide();
+
+            $('.tieude').val($(this).parents('tr').find('.title').text());
+            $('.popup_close').click(function () {
+                $('.popup_xem').fadeOut();
+                $('table').fadeIn();
+                $('.btn_duyet_2').show();
+                $('.btn_xoa_2').show();
+                $('.btn_chan_2').show();
+            })
+        })
+    })
+    
+</script>
+</html>

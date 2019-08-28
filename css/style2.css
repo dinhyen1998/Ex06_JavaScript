@@ -1,0 +1,30 @@
+
+
+        .modal-backdrop {
+          display: none;    
+        }
+         
+        .modal-body1{
+            width: 60%;
+            height: auto;
+            float: left;
+            
+           
+        }
+        .modal-body2{
+            width: 37%;
+            height: auto;
+            float: left;
+            padding-left: 25px;
+           
+        }
+        #txt{
+            font-size: 0.85em;
+              font-weight: 300;
+             vertical-align: middle;
+        }
+       input[type=radio]{
+             margin-top: 30px;
+        }
+       
+       
